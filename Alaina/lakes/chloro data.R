@@ -21,32 +21,38 @@ SL_chloro_date <-
   separate(sampledate, c("month", "day", "year"), sep= "/", extra = "merge")
 
 
-
+SL_chloro_date <-
+  SL_chloro_date %>%
+  mutate(
+    month = as.numeric(month)
+  )
 
 
 ## month <- factor(month, levels =month)
 
-ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
-  geom_point(aes(color= dpth)) +
-  facet_wrap("dpth")
+#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
+#  geom_point(aes(color= dpth)) +
+#  facet_wrap("dpth")
 
-ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
-  geom_point(aes(color= dpth)) +
-  facet_wrap("dpth")+
-  ggtitle("Sparkling Monthly Chloros")
+#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
+#  geom_point(aes(color= dpth)) +
+#  facet_wrap("dpth")+
+#  ggtitle("Sparkling Monthly Chloros")
   
-ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
+smc <- ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
   geom_point(aes(color= dpth)) +
   facet_grid(dpth ~ .)+
   ggtitle("Sparkling Monthly Chloros")
 
+smc + ylim(-50, 75)
+smc + xlim(1,12)
 
 
 
-ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor, fill= chlor)) + 
-  geom_boxplot(aes(color= dpth)) +
-  facet_wrap("dpth")+
-  ggtitle("Sparkling Monthly Chloros")+
+#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor, fill= chlor)) + 
+#  geom_boxplot(aes(color= dpth)) +
+#  facet_wrap("dpth")+
+#  ggtitle("Sparkling Monthly Chloros")+
   
 
 
@@ -57,12 +63,12 @@ ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor, fill= chlor)) 
 
 
 
-SL_chloro
-SL_02light
-combo <- merge( SL_02light, SL_chloro, by= "sampledate")
-combo<- 
-  comborematered %>%
-  mutate(
+#SL_chloro
+#SL_02light
+#combo <- merge( SL_02light, SL_chloro, by= "sampledate")
+#combo<- 
+#  comborematered %>%
+#  mutate(
     
-  )
+#  )
 
