@@ -11,14 +11,19 @@ SL_o2light <-
   )
 
 ##need method to spilt month wise
-#sp_ice <- 
-#  sp_ice %>%
-#  separate(sampledate, c("month", "day", "year"), sep= "/", extra = "merge")
+sl_02_dates <- 
+  SL_o2light %>%
+  separate(sampledate, c("month", "day", "year"), sep= "/", extra = "merge")
 
 ggplot(data = SL_o2light, mapping = aes(x = o2, y = light)) + 
   geom_point(aes(color= dpth)) +
   facet_wrap("dpth")
 
-#ggplot(data = SL_o2light, mapping = aes(x = month?, y = light)) + 
-#  geom_point(aes(color= dpth)) +
-#  facet_wrap("dpth")
+ggplot(data = sl_02_dates, mapping = aes(x = month, y = light)) + 
+  geom_point(aes(color= dpth)) +
+  facet_wrap("dpth")
+
+ggplot(data = sl_02_dates, mapping = aes(x = month, y = light)) + 
+  geom_point(aes(color= o2)) +
+  facet_wrap("dpth")
+
