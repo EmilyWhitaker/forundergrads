@@ -44,7 +44,7 @@ smc <- ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) +
   facet_grid(dpth ~ .)+
   ggtitle("Sparkling Monthly Chloros")
 
-smc + ylim(-50, 75)
+smc + ylim(-1, 75)
 smc + xlim(1,12)
 
 
