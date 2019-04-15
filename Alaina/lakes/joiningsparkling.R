@@ -25,7 +25,7 @@ jpc <- ggplot(data = join_o2_chloro_date, mapping = aes(x = month, y = chlor)) +
   geom_point(aes(color= dpth)) +
   facet_grid(dpth ~ .)+
   ggtitle("Sparkling Monthly Chloros")
-View(jpc)
+
 
 #changing plot 1
 jpc + ylim(-1, 75)
@@ -36,10 +36,12 @@ lpc <- ggplot(data = join_o2_chloro_date, mapping = aes(x = month, y = chlor)) +
   geom_point(aes(color= light)) +
   facet_grid(dpth ~ .)+
   ggtitle("Sparkling Monthly Chloros with Light")
-view(lpc)
+
 lpc + ylim(-1, 75)
 lpc + xlim(1,12)
 
 jpc
 lpc
+
+## add in ice and snow
 

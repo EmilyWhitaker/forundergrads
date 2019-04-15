@@ -24,20 +24,8 @@ CR_chloro_date <-
     month = as.numeric(month)
   )
 
-
-## month <- factor(month, levels =month)
-
-#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
-#  geom_point(aes(color= dpth)) +
-#  facet_wrap("dpth")
-
-#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
-#  geom_point(aes(color= dpth)) +
-#  facet_wrap("dpth")+
-#  ggtitle("Sparkling Monthly Chloros")
-
 cmc <- ggplot(data = CR_chloro_date, mapping = aes(x = month, y = chlor)) + 
-  geom_point(aes(color= dpth)) +
+  geom_point(aes(fill = lakeid), shape = 21, alpha = 0.7) +
   facet_grid(dpth ~ .)+
   ggtitle("Crystal Lake Monthly Chloros")
 
@@ -45,6 +33,7 @@ cmc
 
 cmc + ylim(-10, 75)
 
+## get that line with averages for crystal
 
 
 
@@ -70,4 +59,15 @@ cmc + ylim(-10, 75)
 #  mutate(
 
 #  )
+
+## month <- factor(month, levels =month)
+
+#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
+#  geom_point(aes(color= dpth)) +
+#  facet_wrap("dpth")
+
+#ggplot(data = SL_chloro_date, mapping = aes(x = month, y = chlor)) + 
+#  geom_point(aes(color= dpth)) +
+#  facet_wrap("dpth")+
+#  ggtitle("Sparkling Monthly Chloros")
 

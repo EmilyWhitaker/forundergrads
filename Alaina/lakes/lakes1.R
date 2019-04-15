@@ -32,13 +32,3 @@ ggplot(data = SL_snowlight, mapping = aes(x = avsnow, y = totice)) +
 
 
 
-
-SL_chloro
-SL_02light
-combo <- merge( SL_02light, SL_chloro, by= "sampledate")
-combo<- 
-  comborematered %>%
-  mutate(
-    
-  )
-
