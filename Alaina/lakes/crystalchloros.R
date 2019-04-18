@@ -27,6 +27,8 @@ CR_chloro_date <-
 cmc <- ggplot(data = CR_chloro_date, mapping = aes(x = month, y = chlor)) + 
   geom_point(aes(fill = lakeid), shape = 21, alpha = 0.7) +
   facet_grid(dpth ~ .)+
+  ylim(0, 75)+
+  ylab("Chlorophyll a concentration mg/l")+
   ggtitle("Crystal Lake Monthly Chloros")
 
 cmc
